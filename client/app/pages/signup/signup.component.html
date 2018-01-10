@@ -1,0 +1,65 @@
+<app-toast [message]="toast.message"></app-toast>
+
+<div class="container">
+  <app-page-header [title]="title"></app-page-header>
+  <div class="row">
+    <div class="col-md-4 col-sm-12 col-centered">
+      <div class="form-wrap">
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+          <div class="input-wrap">
+            <mat-form-field>
+              <span matPrefix>
+                <i class="prefix fa fa-user"></i>
+              </span>
+              <input matInput #input type="text" minlength="2" maxlength="30" name="username" [formControl]="username" placeholder="Username">
+              <mat-hint align="end">{{input.value?.length || 0}}/30</mat-hint>
+              <mat-error *ngIf="username.hasError('minlength')">
+                Username must contain at least 2 characters
+              </mat-error>
+              <mat-error *ngIf="username.hasError('pattern')">
+                Username can contain only letters and numbers
+              </mat-error>
+              <mat-error *ngIf="username.hasError('required')">
+                Username is
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="input-wrap">
+            <mat-form-field>
+              <span matPrefix>
+                <i class="prefix fa fa-envelope"></i>
+              </span>
+              <input matInput type="email" name="email" [formControl]="email" placeholder="Email">
+              <mat-error *ngIf="email.hasError('pattern')">
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="email.hasError('required')">
+                Email is
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="input-wrap">
+            <mat-form-field>
+              <span matPrefix>
+                <i class="prefix fa fa-key"></i>
+              </span>
+              <input matInput type="password" name="password" [formControl]="password" placeholder="Password">
+              <mat-error *ngIf="password.hasError('minlength')">
+                Password must be at least 6 characters long
+              </mat-error>
+              <mat-error *ngIf="password.hasError('required')">
+                Password is
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <button mat-raised-button type="submit" [disabled]="!registerForm.valid" color="accent">
+            <i class="fa fa-paper-plane"></i> Signup
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

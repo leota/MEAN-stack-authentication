@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div *ngIf="!auth.loggedIn" class="btn-wrap">
+        <div>
+          <button mat-raised-button routerLink="/login" routerLinkActive="active" color="accent">
+            <i class="fa fa-sign-in"></i> Login
+          </button>
+        </div>
+        <p>or</p>
+        <div>
+          <button mat-raised-button routerLink="/signup" routerLinkActive="active" color="accent">
+            <i class="fa fa-user-plus"></i> Signup
+          </button>
+        </div>
+      </div>
+      <h4 *ngIf="auth.isAdmin" class="user-role" >User is Admin</h4>
+      <h4 *ngIf="!auth.isAdmin && auth.loggedIn" class="user-role" >User is NOT Admin</h4>
+    </div>
+  </div>
+</div>

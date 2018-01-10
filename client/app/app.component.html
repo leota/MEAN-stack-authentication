@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <a routerLink="/" class="link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+    <i class="fa fa-home"></i>
+  </a>
+  <div class="links-group">
+    <a routerLink="/admin" class="link" routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin">
+      Admin Panel
+    </a>
+  </div>
+  <div *ngIf="auth.loggedIn" class="user-menu">
+    <button mat-icon-button [matMenuTriggerFor]="userMenu" class="link">
+      <i class="fa fa-user"></i>
+    </button>
+    <mat-menu #userMenu="matMenu">
+      <a mat-menu-item routerLink="/account">
+        <i class="fa fa-cog"></i>
+        <span>Settings</span>
+      </a>
+      <a mat-menu-item routerLink="/logout">
+        <i class="fa fa-sign-out"></i>
+        <span>Logout</span>
+      </a>
+    </mat-menu>
+  </div>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

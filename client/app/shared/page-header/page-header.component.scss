@@ -1,0 +1,10 @@
+@import '../../../variables';
+.page-header {
+    margin: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: $accentCol;
+    .title {
+        font-size: $font-large;
+    }
+}
