@@ -1,5 +1,5 @@
 # MEAN-stack-authentication
-MEAN stack authentication boilerplate with Angular 5 and Angular Material.
+MEAN stack authentication boilerplate with Angular5 and AngularMaterial2.
 
 ## Prerequisites
 1. Install [Node.js](https://nodejs.org) and [MongoDB](https://www.mongodb.com)
@@ -8,7 +8,7 @@ MEAN stack authentication boilerplate with Angular 5 and Angular Material.
 
 ## Run
 ### Development mode
-#### If on Windows first run: `"C:\Program Files\MongoDB\Server\[VERSION]\bin\mongod.exe"`
+#### If on Windows open cmd prompt and run: `"C:\Program Files\MongoDB\Server\[VERSION]\bin\mongod.exe"`
 
 `npm run dev`: [concurrently](https://github.com/kimmobrunfeldt/concurrently) execute MongoDB, Angular build, TypeScript compiler and Express server.
 
